@@ -1,0 +1,13 @@
+<h1 class="text-center m-4">Welcome to The Restaurant to be!</h1>
+<%= link_to "Add a new restaurant", new_restaurant_path, class: "text-end"%>
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card col-2 m-4 p-4 bg-light" style="width: 18rem;">
+        <h5 class="card-title"><%=restaurant.name%></h5>
+        <p class="card-text">Address : <%=restaurant.address%></p>
+        <a href="<%= restaurant_path(restaurant)%>" class="btn btn-primary">More detail</a>
+      </div>
+    <%end%>
+  </div>
+</div>

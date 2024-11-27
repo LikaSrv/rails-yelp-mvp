@@ -1,0 +1,12 @@
+<h1 class="text-center m-4"><%=@restaurant.name%></h1>
+<p class="text-center m-2">Address : <%=@restaurant.address%></p>
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant)%>
+<% @reviews.each do |review|%>
+  <div class="d-flex flex-row m-2">
+    <p><%=review.content%></p>
+    <% review.rating.times do |i|%>
+      <i class="fa-solid fa-star text-warning"></i>
+    <%end%>
+  </div>
+<%end%>
+<%= link_to "Back to restaurants", restaurants_path%>
